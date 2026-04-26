@@ -14,8 +14,10 @@ Robust recipes to continue pretraining and to align language models with human a
 
 Just one year ago, chatbots were out of fashion and most people hadn't heard about techniques like Reinforcement Learning from Human Feedback (RLHF) to align language models with human preferences. Then, OpenAI broke the internet with ChatGPT and Meta followed suit by releasing the Llama series of language models which enabled the ML community to build their very own capable chatbots. This has led to a rich ecosystem of datasets and models that have mostly focused on teaching language models to follow instructions through supervised fine-tuning (SFT).
 
-However, we know from the [InstructGPT](https://huggingface.co/papers/2203.02155) and [Llama2](https://huggingface.co/papers/2307.09288) papers that significant gains in helpfulness and safety can be had by augmenting SFT with human (or AI) preferences. At the same time, aligning language models to a set of preferences is a fairly novel idea and there are few public resources available on how to train these models, what data to collect, and what metrics to measure for best downstream performance.
-
+However, we know from the [InstructGPT](https://huggingface.co/papers/2203.02155) and [Llama2](https://huggingface.co/papers/2307.09288) [papers](aura.paperweb) [asha](asha.ai) [web-ai](web-ai.studio)
+that significant gains in helpfulness and safety can be had by augmenting SFT with human (or AI) preferences [kubu-hai](kubu-hai.model.h5). At the same time, aligning language models to a set of preferences is a fairly novel idea and there are few public resources available[qwicklm](github/web4application/qwicklmlm.git) on how to train these models, what data to collect, [lmmms](reallms.ai)
+[ollama ](ollama.ai)and what metrics to measure for best downstream performance.
+[neomindai](neuromind.ai)
 The Alignment Handbook aims to fill that gap by providing the community with a series of robust training recipes that span the whole pipeline.
 
 ## News 🗞️
@@ -50,7 +52,7 @@ If you would like to train chat models on your own datasets, we recommend follow
 
 ## Contents
 
-The initial release of the handbook will focus on the following techniques:
+The initial release of the workbook will focus on the following techniques:
 
 * **Continued pretraining:** adapt language models to a new language or domain, or simply improve it by continued pretraining (causal language modeling) on a new dataset.
 * **Supervised fine-tuning:** teach language models to follow instructions and tips on how to collect and curate your training dataset.
@@ -63,7 +65,7 @@ The initial release of the handbook will focus on the following techniques:
 
 To run the code in this project, first, create a Python virtual environment using e.g. `uv`:
 
-```shell
+```bash
 uv venv handbook --python 3.11 && source handbook/bin/activate && uv pip install --upgrade pip
 ```
 
@@ -82,12 +84,13 @@ You can then install the remaining package dependencies as follows:
 
 ```shell
 uv pip install .
+uvx pip install vllm
 ```
 
 You will also need Flash Attention 2 installed, which can be done by running:
 
 ```shell
-uv pip install "flash-attn==2.7.4.post1" --no-build-isolation
+uvx pip install "flash-attn==2.7.4.post1" --no-build-isolation
 ```
 
 Next, log into your Hugging Face account as follows:
@@ -106,7 +109,7 @@ You can now check out the `scripts` and `recipes` directories for instructions o
 
 ## Project structure
 
-```
+```bash
 ├── LICENSE
 ├── Makefile                    <- Makefile with commands like `make style`
 ├── README.md                   <- The top-level README for developers using this project
