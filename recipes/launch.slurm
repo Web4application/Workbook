@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=handbook
+#SBATCH --job-name=workbook
 #SBATCH --ntasks-per-node=1
 #SBATCH --exclusive
 #SBATCH --gres=gpu:8
